@@ -1,3 +1,4 @@
+// lib/data.ts
 export type Impact = { label: string; value: string; note?: string };
 
 export type Project = {
@@ -9,16 +10,17 @@ export type Project = {
   highlights: string[];
   impact?: Impact[];
   image?: string;
-  links: { repo?: string; demo?: string };
+  // ➜ Links linh hoạt: monorepo (repo) hoặc tách FE/BE (repoFE, repoBE)
+  links: { repo?: string; repoFE?: string; repoBE?: string; demo?: string };
 };
 
 export const projects: Project[] = [
   {
     name: "HomiLux — Event Management Platform",
-    tagline: "Full‑stack React ↔ Spring Boot, auth & caching, state management tối ưu",
+    tagline: "Full-stack React ↔ Spring Boot, auth & caching, state management tối ưu",
     period: "May 2025 – Present",
     description:
-      "Thiết kế kiến trúc full‑stack, xây REST APIs với Spring Boot, xác thực & phân quyền bằng Spring Security + JWT; Redis caching & indexing; frontend với TanStack Router/Query + Zustand.",
+      "Thiết kế kiến trúc full-stack, xây REST APIs với Spring Boot, xác thực & phân quyền bằng Spring Security + JWT; Redis caching & indexing; frontend với TanStack Router/Query + Zustand.",
     stack: [
       "React",
       "TanStack Router",
@@ -38,10 +40,9 @@ export const projects: Project[] = [
       { label: "Response time", value: "↓ 40–60%", note: "placeholder, cập nhật khi có đo đạc" },
       { label: "Engagement", value: "↑ ?%", note: "placeholder" }
     ],
-    image: "/images/homilux-placeholder.jpg",
+    image: "/images/homilux-hero.png", // ➜ dùng ảnh hero
     links: {
-      repo: "#", // TODO: Dán link GitHub HomiLux
-      demo: ""
+      repo: "https://github.com/DL101003/homilux" // ➜ monorepo FE+BE
     }
   },
   {
@@ -54,13 +55,13 @@ export const projects: Project[] = [
     highlights: [
       "Chat realtime ổn định với WebSocket",
       "AI assistant hỗ trợ người dùng",
-      "Triển khai cross‑platform, tối ưu trải nghiệm"
+      "Triển khai cross-platform, tối ưu trải nghiệm"
     ],
     impact: [{ label: "Time to first message", value: "< 400ms", note: "demo nội bộ" }],
-    image: "/images/reuzit-placeholder.jpg",
+    image: "/images/reuzit-hero.png", // ➜ dùng ảnh hero
     links: {
-      repo: "#", // TODO: Dán link GitHub REUZIT
-      demo: ""
+      repoFE: "https://github.com/DL101003/ReUZit_FE",
+      repoBE: "https://github.com/DL101003/ReUZit"
     }
   }
 ];
