@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0B0D10;
+  --text: #E6E8EB;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+* { box-sizing: border-box; }
